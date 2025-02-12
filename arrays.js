@@ -6,10 +6,10 @@
  *
  * e.g.
  * isArrayLengthOdd([1, 2, 3]) -> true
- * isArrayLengthOdd([1, 2, 3, 4]) -> flase
+ * isArrayLengthOdd([1, 2, 3, 4]) -> false
  */
 function isArrayLengthOdd(numbers) {
-  // Your code here
+  return numbers.length % 2 !== 0;
 }
 
 /**
@@ -23,7 +23,7 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+  return numbers.length % 2 === 0;
 }
 
 /**
@@ -35,19 +35,23 @@ function isArrayLengthEven(numbers) {
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
 function addLailaToArray(instructors) {
-  // Your code here
+
+  let newIns = instructors;
+  newIns.push("Laila")
+  return newIns;
 }
+
 
 /**
  * eliminateTeam(teams):
  * - receives array teams
- * - removes the last element from the array and return it
+ * - removes the last element from the array and returns it
  *
  * e.g.
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+  return teams.pop();
 }
 
 /**
@@ -61,7 +65,11 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+  if (fruits.length % 2 === 0) {
+    return fruits.slice(fruits.length / 2);
+  } else {
+    return [];
+  }
 }
 
 /**
@@ -71,7 +79,7 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  *
  * e.g.
  * youGottaCalmDown("HI!!!!!!!!!!") -> "HI!"
- * youGottaCalmDown("Taylor Schwift!!!!!!!!!!!") -> "Taylor Schwift!"
+ * youGottaCalmDown("Taylor Swift!!!!!!!!!!!") -> "Taylor Swift!"
  * youGottaCalmDown("Hellooooo") -> "Hellooooo"
  *
  * Hint:
@@ -79,7 +87,11 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  */
 function youGottaCalmDown(shout) {
-  // Your code here
+  let exclamationIndex = shout.indexOf('!');
+  if (exclamationIndex !== -1) {
+    return shout.slice(0, exclamationIndex + 1);
+  }
+  return shout;
 }
 
 module.exports = {
